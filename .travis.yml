@@ -2,7 +2,7 @@
 # @Date:   2018-01-24T14:35:24+11:00
 # @Email:  root@guiguan.net
 # @Last modified by:   guiguan
-# @Last modified time: 2018-01-25T10:28:04+11:00
+# @Last modified time: 2018-01-25T10:57:04+11:00
 #
 # dbKoda - a modern, open source code editor, for MongoDB.
 # Copyright (C) 2017-2018 Southbank Software
@@ -32,7 +32,10 @@ jdk: openjdk8
 
 git:
   depth: 3
-  submodules: true
+  submodules: false
+
+before_install:
+  - git submodule update --init --recursive --recommend-shallow --remote
 
 install:
   - node -v
