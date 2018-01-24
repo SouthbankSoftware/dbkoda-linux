@@ -1,0 +1,56 @@
+# @Author: Guan Gui <guiguan>
+# @Date:   2018-01-24T14:35:24+11:00
+# @Email:  root@guiguan.net
+# @Last modified by:   guiguan
+# @Last modified time: 2018-01-25T05:33:05+11:00
+#
+# dbKoda - a modern, open source code editor, for MongoDB.
+# Copyright (C) 2017-2018 Southbank Software
+#
+# This file is part of dbKoda.
+#
+# dbKoda is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# dbKoda is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with dbKoda.  If not, see <http://www.gnu.org/licenses/>.
+
+os: linux
+dist: trusty
+sudo: required
+language: node_js
+# Node version specified in .nvmrc
+node_js: null
+jdk: openjdk8
+
+git:
+  depth: 3
+  submodules: true
+
+install:
+  - node -v
+  - java -version
+  - python --version
+
+script:
+  - yarn install --no-progress
+  - yarn gulp build
+  - (cd ./dbkoda/dist && for i in $(ls *.deb *.AppImage); do shasum -a 1 $i > $i.sha1; done)
+  - yarn gulp addVersionSuffixToBuildArtifact
+  - (cd ./dbkoda/dist && mkdir s3 && mv *.deb *.AppImage *.yml *.sha1 s3)
+
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: southbanksoftware.com
+  skip_cleanup: true
+  local_dir: dbkoda/dist/s3
+  upload-dir: travis

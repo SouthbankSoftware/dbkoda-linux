@@ -1,0 +1,44 @@
+{
+  "name": "dbkoda-linux",
+  "version": "0.2.0",
+  "description": "dbKoda for Linux",
+  "main": "gulpfile.js",
+  "author": {
+    "name": "Southbank Software",
+    "email": "developer@southbanksoftware.com",
+    "url": "http://southbanksoftware.com"
+  },
+  "license": "AGPL-3.0",
+  "engines": {
+    "node": ">= 8.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SouthbankSoftware/dbkoda-linux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SouthbankSoftware/dbkoda-linux/issues"
+  },
+  "homepage": "https://github.com/SouthbankSoftware/dbkoda-linux#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-node": "^0.3.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.5.1"
+  },
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^1.0.0",
+    "gulp-shell": "^0.6.5",
+    "pump": "^2.0.1",
+    "shelljs": "^0.8.1",
+    "through2": "^2.0.3",
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^11.0.0"
+  }
+}
