@@ -2,7 +2,7 @@
 # @Date:   2018-01-24T14:35:24+11:00
 # @Email:  root@guiguan.net
 # @Last modified by:   guiguan
-# @Last modified time: 2018-01-25T09:27:53+11:00
+# @Last modified time: 2018-01-25T10:28:04+11:00
 #
 # dbKoda - a modern, open source code editor, for MongoDB.
 # Copyright (C) 2017-2018 Southbank Software
@@ -51,8 +51,7 @@ deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: southbanksoftware.com
+  bucket: cloud-build
   skip_cleanup: true
   local_dir: dbkoda/dist/s3
-  upload-dir: travis
   region: ap-southeast-2

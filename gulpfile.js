@@ -3,7 +3,7 @@
  * @Date:   1970-01-01T10:00:00+10:00
  * @Email:  root@guiguan.net
  * @Last modified by:   guiguan
- * @Last modified time: 2018-01-25T09:28:04+11:00
+ * @Last modified time: 2018-01-25T10:48:00+11:00
  *
  * dbKoda - a modern, open source code editor, for MongoDB.
  * Copyright (C) 2017-2018 Southbank Software
@@ -151,20 +151,36 @@ gulp.task('buildDbKoda', (cb) => {
  * Add version (from Travis) suffix to build artifact
  */
 gulp.task('addVersionSuffixToBuildArtifact', (cb) => {
-  process.chdir(__dirname);
+  process.chdir(path.resolve(__dirname, 'dbkoda/dist'));
 
-  const { TRAVIS_BRANCH, TRAVIS_BUILD_NUMBER } = process.env;
+  const { TRAVIS, APPVEYOR } = process.env;
+
+  let provider;
+  let buildNum;
+  let branch;
+
+  if (TRAVIS === 'true') {
+    const { TRAVIS_BRANCH, TRAVIS_BUILD_NUMBER } = process.env;
+
+    provider = 'travis';
+    buildNum = TRAVIS_BUILD_NUMBER;
+    branch = TRAVIS_BRANCH;
+  } else if (APPVEYOR === 'true') {
+    const { APPVEYOR_REPO_BRANCH, APPVEYOR_BUILD_NUMBER } = process.env;
+
+    provider = 'appveyor';
+    buildNum = APPVEYOR_BUILD_NUMBER;
+    branch = APPVEYOR_REPO_BRANCH;
+  } else {
+    return cb(new Error('Unknown CI provider'));
+  }
 
   pump(
     [
-      gulp.src([
-        './dbkoda/dist/*.AppImage',
-        './dbkoda/dist/*.yml',
-        './dbkoda/dist/*.sha1'
-      ]),
+      gulp.src(['*.AppImage', '*.yml', '*.sha1']),
       vinylPaths(del),
       rename((path) => {
-        path.basename += `-${TRAVIS_BUILD_NUMBER}.${TRAVIS_BRANCH}`;
+        path.basename += `-${provider}.${buildNum}.${branch}`;
       }),
       gulp.dest('./dbkoda/dist')
     ],
