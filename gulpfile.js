@@ -3,7 +3,7 @@
  * @Date:   1970-01-01T10:00:00+10:00
  * @Email:  root@guiguan.net
  * @Last modified by:   guiguan
- * @Last modified time: 2018-01-25T12:08:43+11:00
+ * @Last modified time: 2018-01-25T12:24:33+11:00
  *
  * dbKoda - a modern, open source code editor, for MongoDB.
  * Copyright (C) 2017-2018 Southbank Software
@@ -185,7 +185,7 @@ gulp.task('addVersionSuffixToBuildArtifact', (cb) => {
       rename((path) => {
         path.basename += `-${provider}.${buildNum}.${branch}`;
       }),
-      gulp.dest('./dbkoda/dist')
+      gulp.dest('.')
     ],
     cb
   );
