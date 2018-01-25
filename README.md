@@ -8,7 +8,6 @@
 ## Requirement
 * Node 8.9.1+
 * Yarn 1.3.2+
-* JDK 1.8.0+
 
 ## Build from source
 1. `yarn install`
