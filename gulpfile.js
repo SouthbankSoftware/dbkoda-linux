@@ -3,7 +3,7 @@
  * @Date:   1970-01-01T10:00:00+10:00
  * @Email:  root@guiguan.net
  * @Last modified by:   guiguan
- * @Last modified time: 2018-01-25T12:24:33+11:00
+ * @Last modified time: 2018-01-25T13:42:07+11:00
  *
  * dbKoda - a modern, open source code editor, for MongoDB.
  * Copyright (C) 2017-2018 Southbank Software
@@ -27,7 +27,7 @@
 const gulp = require('gulp');
 const sh = require('shelljs');
 const shell = require('gulp-shell');
-const cp = require('child_process');
+const fs = require('fs');
 const { argv } = require('yargs');
 const through = require('through2');
 const pump = require('pump');
@@ -173,10 +173,11 @@ gulp.task('addVersionSuffixToBuildArtifact', (cb) => {
     return cb(new Error('Unknown CI provider'));
   }
 
-  const branch = cp
-    .execSync('cd .. && git symbolic-ref --short HEAD')
+  // retrieve branch info from `dbkoda` submodule
+  const branch = fs
+    .readFileSync(path.resolve(__dirname, '.gitmodules'))
     .toString()
-    .trim();
+    .match(/\[submodule "dbkoda"\][^\[\]]*branch = (\S+)/)[1];
 
   pump(
     [
