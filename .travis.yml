@@ -2,7 +2,7 @@
 # @Date:   2018-01-24T14:35:24+11:00
 # @Email:  root@guiguan.net
 # @Last modified by:   guiguan
-# @Last modified time: 2018-01-25T10:57:04+11:00
+# @Last modified time: 2018-01-25T11:43:20+11:00
 #
 # dbKoda - a modern, open source code editor, for MongoDB.
 # Copyright (C) 2017-2018 Southbank Software
@@ -47,7 +47,7 @@ script:
   - yarn install --no-progress
   - yarn gulp build
   - (cd ./dbkoda/dist && for i in $(ls *.AppImage); do shasum -a 1 $i > $i.sha1; done)
-  - yarn gulp addVersionSuffixToBuildArtifact
+  - (yarn gulp addVersionSuffixToBuildArtifact)
   - (cd ./dbkoda/dist && mkdir s3 && mv *.AppImage *.yml *.sha1 s3)
 
 deploy:
@@ -58,3 +58,6 @@ deploy:
   skip_cleanup: true
   local_dir: dbkoda/dist/s3
   region: ap-southeast-2
+
+notifications:
+  slack: $SLACK_TOKEN
