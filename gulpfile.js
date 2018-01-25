@@ -3,7 +3,7 @@
  * @Date:   1970-01-01T10:00:00+10:00
  * @Email:  root@guiguan.net
  * @Last modified by:   guiguan
- * @Last modified time: 2018-01-25T10:48:00+11:00
+ * @Last modified time: 2018-01-25T12:08:43+11:00
  *
  * dbKoda - a modern, open source code editor, for MongoDB.
  * Copyright (C) 2017-2018 Southbank Software
@@ -27,6 +27,7 @@
 const gulp = require('gulp');
 const sh = require('shelljs');
 const shell = require('gulp-shell');
+const cp = require('child_process');
 const { argv } = require('yargs');
 const through = require('through2');
 const pump = require('pump');
@@ -157,23 +158,25 @@ gulp.task('addVersionSuffixToBuildArtifact', (cb) => {
 
   let provider;
   let buildNum;
-  let branch;
 
   if (TRAVIS === 'true') {
-    const { TRAVIS_BRANCH, TRAVIS_BUILD_NUMBER } = process.env;
+    const { TRAVIS_BUILD_NUMBER } = process.env;
 
     provider = 'travis';
     buildNum = TRAVIS_BUILD_NUMBER;
-    branch = TRAVIS_BRANCH;
   } else if (APPVEYOR === 'true') {
-    const { APPVEYOR_REPO_BRANCH, APPVEYOR_BUILD_NUMBER } = process.env;
+    const { APPVEYOR_BUILD_NUMBER } = process.env;
 
     provider = 'appveyor';
     buildNum = APPVEYOR_BUILD_NUMBER;
-    branch = APPVEYOR_REPO_BRANCH;
   } else {
     return cb(new Error('Unknown CI provider'));
   }
+
+  const branch = cp
+    .execSync('cd .. && git symbolic-ref --short HEAD')
+    .toString()
+    .trim();
 
   pump(
     [
