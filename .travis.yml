@@ -2,7 +2,7 @@
 # @Date:   2018-01-24T14:35:24+11:00
 # @Email:  root@guiguan.net
 # @Last modified by:   guiguan
-# @Last modified time: 2018-01-25T17:19:53+11:00
+# @Last modified time: 2018-01-25T17:25:27+11:00
 #
 # dbKoda - a modern, open source code editor, for MongoDB.
 # Copyright (C) 2017-2018 Southbank Software
@@ -58,7 +58,7 @@ deploy:
 notifications:
   slack:
     rooms:
-      - secure: yveGJdFyDmZ8CnKfr7sATKola4X57GtLTUYlRp8uvxj/ljavwVlR+fczNRJjoAaRdcoYm5GGomKvnJTPJeKAmI62Xjqih0bdxX31WyExjvTuQ6pwzkAVwheV79+kkj49LvPeqLRa0WrKm69orVPlDkpXVi0pdHTXMFj5TbCfMcCzyUKZr53+gqcLl5YKoydOehIK1lL+hW7DB+MSoGY7ayjYsD6Oy+2oOffSYB+b+UtsX2y4ZncjK5vFkNQmSODcaHbneryjR5g9b9joo1KFDbbchy1zXbJDFqWUzbi/t2s9+KypZX48CKolsyd0s6L6ayUZpE/eKdIMkntEpg6Ie48VimPmHjmlvg/z0K+8Bql/7sD/JyADjswZE/KnzyDIO0GvxUmCS99rj71cRCClQv/dO1K7vcHXFebYJ15jFchH3rkEo0NXY5fxY50CkBDELpCopl+oF852pIkWeKG3jUNKp3saBBOYP9q+21+fAtBMykUdQTiRjFWo2xQLbJN8tUdsBfQPZPajD1ywJVlpmR/e1jH107ak1iP4D1GOEqp1f4nGgpqm5SCb77QSMSzhTQRj6gGoGfi0dhwnkCsPLVSUadgPTN36pVrEEDtaVTf1YXtZ3iXGRdgjT3h/RiF8fJemk/VWdprFbJHk+474Z6mJDC6IMkjciNFlyF8YnQY=
+      - secure: MOYK4vJyGTPhjCAqlIyAs9bTvOzKmf9bRa9c5yrCXJUpphNCWkMKbJFFElOzjHH89X8lUwpE2p1xG5P+FDzLUT3F7vrMaqVWAmpxskpjWq9zonVp0haidTQeqq4j7Rh09HB0G0NwO8EOxsnNsGyavgchOhFIWrj0E5ltqhULmnu4ZcwJRjyrR07grp7kYf0o5iHkDabegh8Q9t7GXXqqc7k7BNxxsY4Dxa4YhY8ElllI5kr4p20YpgxfEgrHbrb58BPM7o36p7al51r17XW54xmMiGlGav3qWcyn0s2RXk178E+KNvze0NXKgp/yilkigjxTDgO8BlOoxMEXiUzVK8wpkNyHcC4FHT4acUV523pgJ98iSIDskSFFe7L9PpHEfEs0EmnQhDgdwkix5uVNqZWAcWGo6YrGnJbtcmQr6kWJkrIy00pnnSoJbqC60jd8pGP72gBgPQk+TbYGiMBqrKbW9TDQrfd1UUdm12bXm3HnkEBz9JNuHKN/z8WSAKfZDOS1a4tuFIVREXgDWFLLZ6MHDjUpL6T5W1c/lCmJZtzwijuFbqYmllpSDyjYuX4GfSFSTUnJuyI5xQa7Ofl9pzS5IkuSPebaYdaNbhpsKxL+no45L+xAA6OdFmjDwrFXmfLqqfshOYezLOSlbSuQTzGlg/HEi9agOzQz6mB7AlU=
     template:
       - 'Linux cloud build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) by %{author} %{result} in %{duration}: %{message}'
   email: false
