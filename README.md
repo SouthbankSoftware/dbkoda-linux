@@ -1,24 +1,14 @@
 # dbkoda-linux
 *dbKoda for Linux*
 
-<p align="left">
-  <a href="https://travis-ci.org/SouthbankSoftware/dbkoda-linux">
-    <img src="https://img.shields.io/travis/SouthbankSoftware/dbkoda-linux.svg?style=flat-square">
-  </a>
-  <a href="https://david-dm.org/SouthbankSoftware/dbkoda-linux">
-    <img src="https://img.shields.io/david/SouthbankSoftware/dbkoda-linux.svg?style=flat-square">
-  </a>
-  <a href="https://david-dm.org/SouthbankSoftware/dbkoda-linux?type=dev">
-    <img src="https://img.shields.io/david/dev/SouthbankSoftware/dbkoda-linux.svg?style=flat-square">
-  </a>
-</p>
+[![build](https://img.shields.io/travis/SouthbankSoftware/dbkoda-linux.svg?style=flat-square)](https://travis-ci.org/SouthbankSoftware/dbkoda-linux)
+[![dependencies](https://img.shields.io/david/SouthbankSoftware/dbkoda-linux.svg?style=flat-square)](https://david-dm.org/SouthbankSoftware/dbkoda-linux)
+[![devDependencies](https://img.shields.io/david/dev/SouthbankSoftware/dbkoda-linux.svg?style=flat-square)](https://david-dm.org/SouthbankSoftware/dbkoda-linux?type=dev)
 
 ## Requirement
-* Node 8.9.1
-* Yarn
-* node-gyp: `yarn global add node-gyp` or `npm install -g node-gyp`
-* JDK 1.8.0
-* **_optional_** Python 2.7 (for testing)
+* Node 8.9.1+
+* Yarn 1.3.2+
+* JDK 1.8.0+
 
 ## Build from source
 1. `yarn install`
