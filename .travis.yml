@@ -2,7 +2,7 @@
 # @Date:   2018-01-24T14:35:24+11:00
 # @Email:  root@guiguan.net
 # @Last modified by:   guiguan
-# @Last modified time: 2018-01-25T17:04:11+11:00
+# @Last modified time: 2018-01-25T17:19:53+11:00
 #
 # dbKoda - a modern, open source code editor, for MongoDB.
 # Copyright (C) 2017-2018 Southbank Software
@@ -57,7 +57,8 @@ deploy:
 
 notifications:
   slack:
-    secure: OdG93rGUGne86ZuMmg1BzwZR9Dy2Bbl2vt0aPbGuTiRQ+QJ3OUQ+MLA72ubMKeQ2oIo0O+AqCNhK3c+8dmHoGJHXLzsHh06NmrG/hK8rts5nbcNOsEFFMw3sx/uGmYE3Mjf5YygWIaY9ct2elHD88qGbjz+gfeOzXP56uRdCDRJVsx1miY6H3cjhkPTiuz7dKolt07tRfTLdA11zlFUJeZOQcaO5LUOoJsyfNMvP/Yd9oFXZdhDzx6e7fiT1Eaptvsd7hkpdVDXH51gjMgL+uu5X5/VLIGpaTHHNGrEDDSYTgUnrXQXD+k+YJ7o496CnvF2SkMD9ZkVOiIWZX75z9Z6unGmLnG0QpH9fXj0DqG2pCtvVOdfASsSk7ONWR2/lKLqCi+Rq/qN/DP2OfbFrmPsqBjv2VyM9BqPiGlZZVC/tOATix2moCZbEj7Wh6RsYeEevaqhxP1TWhzoMkGFkTCvYU6Njm215DaPGjHL5tX2ahAsqM26HSnXmjLCNeWj1h5vXq4wZ55JQBDL/kgQiaJxihl4r9kFMgPT+VLaOgVrRnSO8xqG8XrqfKDYAQMqwnlDyGJIPGYHCXxhPvGa0b5OjEKUlGWOTiiBTfjR7hBMjcYtEM46XK96GdfS7nyVcbCYedAM3t9txzyCU5aPme+TGfpcoeo0lT59XsX7ky0U=
+    rooms:
+      - secure: yveGJdFyDmZ8CnKfr7sATKola4X57GtLTUYlRp8uvxj/ljavwVlR+fczNRJjoAaRdcoYm5GGomKvnJTPJeKAmI62Xjqih0bdxX31WyExjvTuQ6pwzkAVwheV79+kkj49LvPeqLRa0WrKm69orVPlDkpXVi0pdHTXMFj5TbCfMcCzyUKZr53+gqcLl5YKoydOehIK1lL+hW7DB+MSoGY7ayjYsD6Oy+2oOffSYB+b+UtsX2y4ZncjK5vFkNQmSODcaHbneryjR5g9b9joo1KFDbbchy1zXbJDFqWUzbi/t2s9+KypZX48CKolsyd0s6L6ayUZpE/eKdIMkntEpg6Ie48VimPmHjmlvg/z0K+8Bql/7sD/JyADjswZE/KnzyDIO0GvxUmCS99rj71cRCClQv/dO1K7vcHXFebYJ15jFchH3rkEo0NXY5fxY50CkBDELpCopl+oF852pIkWeKG3jUNKp3saBBOYP9q+21+fAtBMykUdQTiRjFWo2xQLbJN8tUdsBfQPZPajD1ywJVlpmR/e1jH107ak1iP4D1GOEqp1f4nGgpqm5SCb77QSMSzhTQRj6gGoGfi0dhwnkCsPLVSUadgPTN36pVrEEDtaVTf1YXtZ3iXGRdgjT3h/RiF8fJemk/VWdprFbJHk+474Z6mJDC6IMkjciNFlyF8YnQY=
     template:
-      - "Linux cloud build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) by %{author} %{result} in %{duration}: %{message}"
+      - 'Linux cloud build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) by %{author} %{result} in %{duration}: %{message}'
   email: false
