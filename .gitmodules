@@ -1,12 +1,12 @@
 [submodule "dbkoda-ui"]
 	path = dbkoda-ui
 	url = https://github.com/SouthbankSoftware/dbkoda-ui.git
-	branch = 0.10-hotfix
+	branch = master
 [submodule "dbkoda-controller"]
 	path = dbkoda-controller
 	url = https://github.com/SouthbankSoftware/dbkoda-controller.git
-	branch = 0.10-hotfix
+	branch = master
 [submodule "dbkoda"]
 	path = dbkoda
 	url = https://github.com/SouthbankSoftware/dbkoda.git
-	branch = 0.10-hotfix
+	branch = master
