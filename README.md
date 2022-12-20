@@ -1,4 +1,6 @@
-# dbkoda-linux
+# dbkoda-linux [ No Longer Maintained ]
+
+**Note:** Unfortunately this project is no longer under active development.
 *dbKoda for Linux*
 
 [![build](https://img.shields.io/travis/SouthbankSoftware/dbkoda-linux.svg?style=flat-square)](https://travis-ci.org/SouthbankSoftware/dbkoda-linux)
